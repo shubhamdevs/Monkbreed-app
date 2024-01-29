@@ -13,6 +13,7 @@
 		51A970062B675C88000C418D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51A970052B675C88000C418D /* Preview Assets.xcassets */; };
 		51A9700F2B675E76000C418D /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A9700E2B675E76000C418D /* Splash.swift */; };
 		51A970112B675F00000C418D /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A970102B675F00000C418D /* Onboarding.swift */; };
+		51A970132B677478000C418D /* SignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A970122B677478000C418D /* SignView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		51A970052B675C88000C418D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		51A9700E2B675E76000C418D /* Splash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Splash.swift; sourceTree = "<group>"; };
 		51A970102B675F00000C418D /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		51A970122B677478000C418D /* SignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			children = (
 				51A9700E2B675E76000C418D /* Splash.swift */,
 				51A970102B675F00000C418D /* Onboarding.swift */,
+				51A970122B677478000C418D /* SignView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51A970012B675C87000C418D /* ContentView.swift in Sources */,
+				51A970132B677478000C418D /* SignView.swift in Sources */,
 				51A9700F2B675E76000C418D /* Splash.swift in Sources */,
 				51A970112B675F00000C418D /* Onboarding.swift in Sources */,
 				51A96FFF2B675C87000C418D /* Monkbreed_appApp.swift in Sources */,
