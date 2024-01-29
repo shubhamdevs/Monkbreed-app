@@ -17,7 +17,14 @@ struct Splash: View {
                 Onboarding()
             } else {
                 Text("MONKBREED_")
-                    .font(.largeTitle.bold()    )
+                    .font(.largeTitle.bold())
+            }
+        }
+        .onAppear() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.8) {
+                withAnimation {
+                    isActive = true
+                }
             }
         }
     }

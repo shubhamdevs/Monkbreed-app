@@ -9,7 +9,18 @@ import SwiftUI
 
 struct Onboarding: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            
+        }
+        .padding()
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(
+            Image("bannerImage")
+                .resizable()
+                .scaledToFill()
+                .ignoresSafeArea()
+        )
+        .preferredColorScheme(.dark)
     }
 }
 
