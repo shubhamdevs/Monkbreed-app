@@ -28,8 +28,9 @@ struct Onboarding: View {
                         .fill(
                             RadialGradient(colors: [.green, .blue, .clear, .clear, .clear, .clear, .clear, ], center: .center, startRadius: 0, endRadius: UIScreen.main.bounds.width)
                         )
+                        .scaleEffect(isExpanded ? 20 : 1.55)
                         .padding(.bottom, -(UIScreen.main.bounds.width / 2))
-                        .scaleEffect(isExpanded ? 20 : 2)
+                        
                 }
                 .frame(height: .infinity)
                 .zIndex(isExpanded ? 2 : 0)
@@ -59,7 +60,22 @@ struct Onboarding: View {
                     }
                     .fontWeight(.medium)
                 })
+                
+                .opacity(isExpanded ? 0 : 1)
+                .offset(offset)
             }
+            
+            // here we will add a gesture that when user swipe up the all layout goes with it
+            .gesture(DragGesture()
+                .onEnded({ value in
+                    if value.translation.height < 50 {
+                        withAnimation(.easeInOut(duration: 2)) {
+                            offset = value.translation
+                            isExpanded = true
+                        }
+                    }
+                })
+            )
             .padding()
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(
