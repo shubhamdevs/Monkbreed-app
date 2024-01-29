@@ -37,6 +37,7 @@ struct SignView: View {
                     }
                 
                 SecureField("Enter Password", text: $password)
+                    .keyboardType(.emailAddress)
                     .padding(.horizontal)
                     .frame(height: 60)
                     .background(.gray.opacity(0.1))
@@ -49,23 +50,28 @@ struct SignView: View {
             
             Spacer()
             
-            Button(action: {
+            VStack(content: {
+                Button(action: {
+                    
+                }, label: {
+                    Text("LogIn")
+                        .fontWeight(.semibold)
+                })
+                .frame(maxWidth: .infinity)
+                .frame(height: 60)
+                .background(.red)
+                .clipShape(Capsule())
+                .foregroundStyle(.white)
                 
-            }, label: {
-                Text("LogIn")
-                    .fontWeight(.semibold)
+                
+                Text("Not having accout? **SignUp**")
+                    .frame(maxWidth: .infinity)
+                
             })
-            .frame(maxWidth: .infinity)
-            .frame(height: 60)
-            .background(.red)
-            .clipShape(Capsule())
-            .foregroundStyle(.white)
             
         })
         .padding()
         .preferredColorScheme(.dark)
-        
-        
     }
 }
 
