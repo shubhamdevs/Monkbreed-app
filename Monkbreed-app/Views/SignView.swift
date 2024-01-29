@@ -49,9 +49,23 @@ struct SignView: View {
             
             Spacer()
             
+            Button(action: {
+                
+            }, label: {
+                Text("LogIn")
+                    .fontWeight(.semibold)
+            })
+            .frame(maxWidth: .infinity)
+            .frame(height: 60)
+            .background(.red)
+            .clipShape(Capsule())
+            .foregroundStyle(.white)
+            
         })
         .padding()
         .preferredColorScheme(.dark)
+        
+        
     }
 }
 
