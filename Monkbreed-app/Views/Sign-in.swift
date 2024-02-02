@@ -1,8 +1,8 @@
 //
-//  SignView.swift
+//  Sign-in.swift
 //  Monkbreed-app
 //
-//  Created by Shubham Biswas on 29/01/24.
+//  Created by Shubham Biswas on 02/02/24.
 //
 
 import SwiftUI
@@ -12,13 +12,18 @@ struct Sign_in: View {
     @State private var email: String = ""
     @State private var password: String = ""
     
+    @Environment(\.presentationMode) var dismiss
+    
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading, spacing: 40, content: {
                 Image(systemName: "arrow.left")
                     .imageScale(.large)
+                    .onTapGesture {
+                        dismiss.wrappedValue.dismiss()
+                    }
                 
-                VStack(alignment: .leading,spacing:15) {
+                VStack(alignment: .leading, spacing:15) {
                     Text("Sign-in")
                         .font(.title)
                     
@@ -45,7 +50,7 @@ struct Sign_in: View {
                         .clipShape(Capsule())
                         .overlay {
                             Capsule()
-                                .stroke(.gray.opacity(0.8))
+                                .stroke(.gray.opacity(0.8), lineWidth: 0.8)
                         }
                 }
                 

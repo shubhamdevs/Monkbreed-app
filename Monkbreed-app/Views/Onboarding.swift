@@ -16,6 +16,7 @@ struct Onboarding: View {
     var body: some View {
         if isActive {
             // We move to Login Screen after that, here we will show login/Registration view
+            Sign_in()
             
         } else {
             ZStack(alignment: .top) {
@@ -72,6 +73,12 @@ struct Onboarding: View {
                         withAnimation(.easeInOut(duration: 2)) {
                             offset = value.translation
                             isExpanded = true
+                        }
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.8) {
+                            withAnimation {
+                                isActive.toggle()
+                            }
                         }
                     }
                 })

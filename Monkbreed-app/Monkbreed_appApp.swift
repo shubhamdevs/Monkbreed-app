@@ -11,7 +11,7 @@ import SwiftUI
 struct Monkbreed_appApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Splash()
         }
     }
 }
