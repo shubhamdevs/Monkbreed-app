@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyCnJSn283-woAd6j402bthc7cIeE2rwY2s</string>
+	<key>GCM_SENDER_ID</key>
+	<string>325773400447</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.shubham.Monkbreed-app</string>
+	<key>PROJECT_ID</key>
+	<string>monkbreed-app</string>
+	<key>STORAGE_BUCKET</key>
+	<string>monkbreed-app.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:325773400447:ios:53d8fbee6b2f2bbf52624a</string>
+</dict>
+</plist>
