@@ -6,12 +6,19 @@
 //
 
 import SwiftUI
+import FirebaseCore
+import FirebaseAuth
+import FirebaseFirestore
 
 struct Sign_up: View {
     
     @State private var username: String = ""
     @State private var email: String = ""
     @State private var password: String = ""
+    
+    @State private var isLoading = false
+    
+    @State private var isSigned = false
     
     @Environment(\.presentationMode) var dismiss
     
@@ -67,18 +74,54 @@ struct Sign_up: View {
                 
                 Spacer()
                 
+                // SignUp Button
                 VStack(content: {
                     Button(action: {
-                        
+                        // Sign up
+                        isLoading.toggle()
+                        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
+                            if error != nil {
+                                print(error?.localizedDescription ?? "")
+                                withAnimation {
+                                    isLoading.toggle()
+                                }
+                            } else {
+                                // Now we store user basic details to firestore database
+                                let db = Firestore.firestore()
+                                let data: [String: Any] = [
+                                    "User Name": username,
+                                    "Email": email,
+                                ]
+                                
+                                // Now we add same user name and email to local memory so we don't need to sync every time
+                                UserDefaults.standard.setValue(result?.user.uid, forKey: "UID")
+                                // UID is unique key provider to user when sign up to firestore database
+                                
+                                UserDefaults.standard.setValue(username, forKey: "NAME")
+                                UserDefaults.standard.setValue(email, forKey: "EMAIL")
+                                
+                                db.collection("USERS").addDocument(data: data)
+                                isLoading.toggle()
+                                
+                                isSigned = true
+                            }
+                        }
                     }, label: {
-                        Text("LogIn")
-                            .fontWeight(.semibold)
+                        if isLoading {
+                            ProgressView()
+                        } else {
+                            Text("SignUp")
+                                .fontWeight(.semibold)
+                        }
                     })
                     .frame(maxWidth: .infinity)
                     .frame(height: 60)
                     .background(.red)
                     .clipShape(Capsule())
                     .foregroundStyle(.white)
+                    .navigationDestination(isPresented: $isSigned) {
+                        ContentView()
+                    }
                     
                     NavigationLink {
                         Sign_in()
